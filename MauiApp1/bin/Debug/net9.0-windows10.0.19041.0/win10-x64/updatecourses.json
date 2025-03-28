@@ -1,0 +1,8 @@
+[
+  {
+    "StudentId": "12345",
+    "CourseId": "PHYS101",
+    "Action": "enrolled",
+    "Timestamp": "2023-11-18T14:30:45.1234567Z"
+  }
+]

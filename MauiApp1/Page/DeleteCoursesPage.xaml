@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiApp1.ViewModel"
+             x:Class="MauiApp1.Page.DeleteCoursesPage"
+             Title="ถอนรายวิชา"
+             BackgroundColor="#F8F0E3">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Frame Padding="15"
+                   Margin="0,0,0,10"
+                   BorderColor="#D2691E"
+                   BackgroundColor="#E6D7B7"
+                   CornerRadius="12"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="ข้อมูลนักศึกษา"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#8B4513"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="{Binding StudentProfile.Name}"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="#D2691E" />
+
+                    <Label Text="{Binding StudentProfile.Major, StringFormat='สาขา: {0}'}"
+                           FontSize="16"
+                           TextColor="#8B4513" />
+
+                    <Label Text="{Binding StudentProfile.Faculty, StringFormat='คณะ: {0}'}"
+                           FontSize="16"
+                           TextColor="#8B4513" />
+
+                    <Label Text="{Binding StudentProfile.Year, StringFormat='ชั้นปี: {0}'}"
+                           FontSize="16"
+                           TextColor="#8B4513" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Padding="15"
+                   Margin="0,0,0,10"
+                   BorderColor="#D2691E"
+                   BackgroundColor="#E6D7B7"
+                   CornerRadius="12"
+                   HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="เทอมปัจจุบัน:"
+                           FontSize="16"
+                           TextColor="#8B4513" />
+                    <Label Text="{Binding CurrentTerm.TermTerm}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#D2691E" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Label Text="รายวิชาที่ลงทะเบียน"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#8B4513"
+                   HorizontalOptions="Center" />
+
+            <Frame Padding="0"
+                   BackgroundColor="Transparent"
+                   HasShadow="False">
+                <CollectionView ItemsSource="{Binding EnrolledCourses}"
+                                HeightRequest="{OnPlatform Android=500, iOS=500, WinUI=500}"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="15"
+                                   Margin="5"
+                                   BorderColor="#D2691E"
+                                   BackgroundColor="#E6D7B7"
+                                   CornerRadius="12"
+                                   HasShadow="True">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <VerticalStackLayout Spacing="8" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0">
+                                        <Label Text="{Binding CourseName}"
+                                               FontSize="20"
+                                               FontAttributes="Bold"
+                                               TextColor="#D2691E"
+                                               HorizontalOptions="Start" />
+                                        <Label Text="{Binding CourseId, StringFormat='รหัสวิชา: {0}'}"
+                                               FontSize="16"
+                                               TextColor="#8B4513"
+                                               HorizontalOptions="Start" />
+                                        <Label Text="{Binding Credits, StringFormat='หน่วยกิต: {0}'}"
+                                               FontSize="16"
+                                               TextColor="#8B4513"
+                                               HorizontalOptions="Start" />
+                                    </VerticalStackLayout>
+
+                                    <Button Text="ถอน"
+                                            FontSize="16"
+                                            BackgroundColor="#FFD700"
+                                            TextColor="Black"
+                                            WidthRequest="60"
+                                            HeightRequest="40"
+                                            CornerRadius="20"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="End"
+                                            Command="{Binding Path=BindingContext.DropCourseCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                            CommandParameter="{Binding CourseId}"
+                                            Grid.Column="1" />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

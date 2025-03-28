@@ -1,0 +1,189 @@
+[
+  {
+    "id": "12345",
+    "email": "A",
+    "password": "1",
+    "profile": {
+      "name": "John Doe",
+      "major": "Computer Science",
+      "faculty": "Engineering",
+      "year": 3
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["PHYS101"] },
+      { "term": "2/2567", "enrolled_courses": ["CHEM101"] },
+      { "term": "1/2567", "enrolled_courses": ["CHEM101"] }
+    ]
+  },
+  {
+    "id": "67890",
+    "email": "student2@example.com",
+    "password": "password456",
+    "profile": {
+      "name": "Jane Smith",
+      "major": "Mathematics",
+      "faculty": "Science",
+      "year": 2
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["STAT101"] },
+      { "term": "2/2567", "enrolled_courses": ["STAT101"] },
+      { "term": "1/2567", "enrolled_courses": ["STAT101"] }
+    ]
+  },
+  {
+    "id": "34567",
+    "email": "student3@example.com",
+    "password": "pass123",
+    "profile": {
+      "name": "Alice Johnson",
+      "major": "Physics",
+      "faculty": "Science",
+      "year": 1
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["PHYS101"] }
+    ]
+  },
+  {
+    "id": "45678",
+    "email": "student4@example.com",
+    "password": "securepass",
+    "profile": {
+      "name": "Bob Brown",
+      "major": "Electrical Engineering",
+      "faculty": "Engineering",
+      "year": 4
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["EE201", "CS101"] },
+      { "term": "2/2567", "enrolled_courses": ["MATH101"] }
+    ]
+  },
+  {
+    "id": "56789",
+    "email": "student5@example.com",
+    "password": "password789",
+    "profile": {
+      "name": "Charlie White",
+      "major": "Chemistry",
+      "faculty": "Science",
+      "year": 2
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["CHEM101"] },
+      { "term": "2/2567", "enrolled_courses": ["MATH101"] }
+    ]
+  },
+  {
+    "id": "67891",
+    "email": "student6@example.com",
+    "password": "mypassword",
+    "profile": {
+      "name": "David Green",
+      "major": "Mechanical Engineering",
+      "faculty": "Engineering",
+      "year": 3
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["ME201", "PHYS101"] }
+    ]
+  },
+  {
+    "id": "78901",
+    "email": "student7@example.com",
+    "password": "strongpass",
+    "profile": {
+      "name": "Emma Black",
+      "major": "Biology",
+      "faculty": "Science",
+      "year": 1
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": []
+  },
+  {
+    "id": "89012",
+    "email": "student8@example.com",
+    "password": "password999",
+    "profile": {
+      "name": "Frank Lee",
+      "major": "Civil Engineering",
+      "faculty": "Engineering",
+      "year": 4
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["CE301"] },
+      { "term": "2/2567", "enrolled_courses": ["MATH101"] }
+    ]
+  },
+  {
+    "id": "90123",
+    "email": "student9@example.com",
+    "password": "password123",
+    "profile": {
+      "name": "Grace White",
+      "major": "Environmental Science",
+      "faculty": "Science",
+      "year": 2
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["BIO101"] },
+      { "term": "2/2567", "enrolled_courses": ["CHEM101"] }
+    ]
+  },
+  {
+    "id": "01234",
+    "email": "student10@example.com",
+    "password": "password456",
+    "profile": {
+      "name": "Henry Adams",
+      "major": "Software Engineering",
+      "faculty": "Engineering",
+      "year": 3
+    },
+    "current_term": {
+      "term": "2/2568",
+      "enrolled_courses": []
+    },
+    "previous_terms": [
+      { "term": "1/2568", "enrolled_courses": ["SE201"] },
+      { "term": "2/2567", "enrolled_courses": ["CS101"] }
+    ]
+  }
+]

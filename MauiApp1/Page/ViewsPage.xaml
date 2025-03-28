@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Page.ViewsPage"
+             Title="หน้าแสดงผล">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center" Padding="20">
+
+            <Label Text="สวัสดีชาวโลก!!!"
+                   TextColor="#8B4513"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+            <Border WidthRequest="300"
+                    StrokeShape="RoundRectangle 40,0,0,40"
+                    Padding="20"
+                    BackgroundColor="#E6D7B7"
+                    Stroke="#D2691E"
+                    StrokeThickness="2">
+                <Image Source="maui_disney.png" Aspect="AspectFit"/>
+            </Border>
+
+            <Button Text="คลิกฉันสิ!"
+                    WidthRequest="200"
+                    BackgroundColor="#FFD700"
+                    TextColor="Black"
+                    Clicked="Button_Clicked"
+                    ImageSource="icons8_camera_50.png"
+                    ContentLayout="Left,10"
+                    HeightRequest="40"
+                    Padding="10"
+                    Margin="0,20,0,10"/>
+
+            <ImageButton Source="icons8_camera_50.png"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         Clicked="ImageButton_Clicked"
+                         Margin="0,0,0,10"/>
+
+            <Entry FontSize="16"
+                   WidthRequest="250"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="ป้อนข้อความ"
+                   Margin="0,0,0,10"/>
+
+            <Entry FontSize="16"
+                   IsPassword="True"
+                   WidthRequest="250"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="ป้อนรหัสผ่าน"
+                   Margin="0,0,0,10"/>
+
+            <Border HeightRequest="250"
+                    WidthRequest="400"
+                    BackgroundColor="#E6D7B7"
+                    Stroke="#D2691E"
+                    StrokeThickness="2">
+                <Editor Placeholder="ป้อนข้อความยาวๆ"
+                        TextColor="#8B4513"/>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

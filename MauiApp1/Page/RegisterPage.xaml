@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Page.RegisterPage"
+             Title="RegisterPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Name" FontAttributes="Bold"/>
+            <Entry Placeholder="Enter your name" Text="{Binding Name}" />
+            
+            <Label Text="Email" FontAttributes="Bold"/>
+            <Entry Placeholder="Enter your email" Text="{Binding Email}" Keyboard="Email" />
+            
+            <Label Text="Password" FontAttributes="Bold"/>
+            <Entry Placeholder="Enter your password" Text="{Binding Password}" IsPassword="True" />
+            
+            <Label Text="Faculty" FontAttributes="Bold"/>
+            <Entry Placeholder="Enter your faculty" Text="{Binding Faculty}" />
+            
+            <Label Text="Major" FontAttributes="Bold"/>
+            <Entry Placeholder="Enter your major" Text="{Binding Major}" />
+            
+            <Label Text="Year" FontAttributes="Bold"/>
+            <Entry Placeholder="Enter your year (e.g. 2565)" 
+                   Text="{Binding Year}" 
+                   Keyboard="Numeric" />
+            
+            <Button Text="Register" 
+                    Command="{Binding RegisterCommand}" 
+                    Margin="0,20,0,0"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    HeightRequest="50"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

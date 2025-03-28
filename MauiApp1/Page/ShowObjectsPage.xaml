@@ -1,0 +1,143 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Page.ShowObjectsPage"
+             xmlns:viewmodel="clr-namespace:MauiApp1.ViewModel"
+             xmlns:model="clr-namespace:MauiApp1.Model"
+             x:DataType="viewmodel:ShowObjectsViewModel"
+             Title="ข้อมูลนักศึกษา"
+             BackgroundColor="#FFF8E1">
+    <Grid RowDefinitions="*" ColumnDefinitions="*, Auto">
+        <ScrollView Grid.Row="0" Grid.Column="0">
+            <VerticalStackLayout Padding="20" Spacing="15">
+                <Frame Style="{StaticResource CardFrameStyle}">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="ข้อมูลนักศึกษา" Style="{StaticResource TitleLabelStyle}" />
+                            <Label Text="{Binding StudentProfile.Name, StringFormat='ชื่อ: {0}'}" Style="{StaticResource InfoLabelStyle}" />
+                            <Label Text="{Binding StudentProfile.Major, StringFormat='สาขา: {0}'}" Style="{StaticResource InfoLabelStyle}" />
+                            <Label Text="{Binding StudentProfile.Faculty, StringFormat='คณะ: {0}'}" Style="{StaticResource InfoLabelStyle}" />
+                            <Label Text="{Binding StudentProfile.Year, StringFormat='ปีการศึกษา: {0}'}" Style="{StaticResource InfoLabelStyle}" />
+                        </VerticalStackLayout>
+                        <Image Grid.Column="1" Source="https://img.salehere.co.th/p/1200x0/2021/06/07/44qfjyisggio.jpg"
+                               WidthRequest="100" HeightRequest="100" Aspect="AspectFill" />
+                    </Grid>
+                </Frame>
+
+                <Label Text="รายวิชาที่ลงทะเบียน" Style="{StaticResource SectionHeaderStyle}" />
+                <CollectionView ItemsSource="{Binding DisplayedCourses}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:EnrolledCourse">
+                            <Frame Style="{StaticResource CourseCardFrameStyle}">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="{Binding CourseName}" Style="{StaticResource CourseTitleStyle}" />
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="รหัสวิชา:" Style="{StaticResource CourseInfoLabelStyle}" />
+                                        <Label Text="{Binding CourseId}" Style="{StaticResource CourseInfoLabelStyle}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="หน่วยกิต:" Style="{StaticResource CourseInfoLabelStyle}" />
+                                        <Label Text="{Binding Credits}" Style="{StaticResource CourseInfoLabelStyle}" />
+                                    </HorizontalStackLayout>
+                                    <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"
+                                                       HorizontalOptions="Center" VerticalOptions="Center" Color="#FFD700" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <ScrollView Grid.Row="0" Grid.Column="1">
+            <VerticalStackLayout Padding="10" Spacing="10">
+                <Frame Style="{StaticResource CardFrameStyle}">
+                    <CollectionView ItemsSource="{Binding AllTerms}"
+                                    HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                                    ItemSizingStrategy="MeasureFirstItem">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="model:Term">
+                                <Button Text="{Binding TermTerm, StringFormat='{0}'}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ShowObjectsViewModel}}, Path=SelectTermCommand}"
+                                        CommandParameter="{Binding}" Margin="0" Padding="10,5" CornerRadius="5"
+                                        Style="{StaticResource TermButtonStyle}" />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+
+                <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                    <Button Text="ประวัติ" Clicked="OnViewHistoryClicked" Style="{StaticResource ActionButtonStyle}" />
+                    <Button Text="เพิ่มวิชา" Clicked="OnButtonClicked" Style="{StaticResource AddButtonStyle}" />
+                    <Button Text="ถอนวิชา" Clicked="deletecoursesButtonClicked" Style="{StaticResource DeleteButtonStyle}" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+    <ContentPage.Resources>
+        <Style x:Key="CardFrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#FFF3E0" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="15" />
+            <Setter Property="Margin" Value="0, 0, 0, 10" />
+            <Setter Property="BorderColor" Value="#D2691E" />
+        </Style>
+
+        <Style x:Key="CourseCardFrameStyle" TargetType="Frame" BasedOn="{StaticResource CardFrameStyle}">
+            <Setter Property="Padding" Value="15" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+
+        <Style x:Key="TitleLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#8B4513" />
+        </Style>
+
+        <Style x:Key="InfoLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#8B4513" />
+        </Style>
+
+        <Style x:Key="SectionHeaderStyle" TargetType="Label" BasedOn="{StaticResource TitleLabelStyle}">
+            <Setter Property="Margin" Value="0, 10, 0, 5" />
+        </Style>
+
+        <Style x:Key="TermButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="10, 5" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="BackgroundColor" Value="#D2691E" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#FFD700" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="10, 5" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+
+        <Style x:Key="AddButtonStyle" TargetType="Button" BasedOn="{StaticResource ActionButtonStyle}">
+            <Setter Property="BackgroundColor" Value="#4CAF50" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+
+        <Style x:Key="DeleteButtonStyle" TargetType="Button" BasedOn="{StaticResource ActionButtonStyle}">
+            <Setter Property="BackgroundColor" Value="#B22222" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+
+        <Style x:Key="CourseTitleStyle" TargetType="Label" BasedOn="{StaticResource TitleLabelStyle}">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+
+        <Style x:Key="CourseInfoLabelStyle" TargetType="Label" BasedOn="{StaticResource InfoLabelStyle}">
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+    </ContentPage.Resources>
+</ContentPage>

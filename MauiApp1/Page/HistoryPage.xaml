@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiApp1.ViewModel"
+             xmlns:model="clr-namespace:MauiApp2.Model"
+             xmlns:model1="clr-namespace:MauiApp2.Model"
+             x:Class="MauiApp1.Page.HistoryPage"
+             Title="ประวัติการลงทะเบียน"
+             BackgroundColor="#F8F0E3">
+
+    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                 Command="{Binding LoadHistoryCommand}">
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
+
+                <Label Text="ประวัติการลงทะเบียนวิชา"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#8B4513"
+                       Margin="0,0,0,10"/>
+
+                <Label Text="{Binding UserId, StringFormat='รหัสนักศึกษา: {0}'}"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       TextColor="#D2691E"
+                       Margin="0,0,0,10"/>
+
+                <SearchBar Placeholder="ค้นหาประวัติ..."
+                           Text="{Binding SearchText}"
+                           HorizontalOptions="FillAndExpand"
+                           BackgroundColor="#E6D7B7"
+                           TextColor="#8B4513"/>
+
+                <ActivityIndicator IsRunning="{Binding IsLoading}"
+                                   IsVisible="{Binding IsLoading}"
+                                   HorizontalOptions="Center"
+                                   Color="#FFD700"/>
+
+                <CollectionView ItemsSource="{Binding FilteredHistory}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:EnrollmentRecord">
+                            <Frame Padding="15"
+                                   Margin="0,0,0,10"
+                                   BackgroundColor="#E6D7B7"
+                                   CornerRadius="10"
+                                   HasShadow="True"
+                                   BorderColor="#D2691E">
+                                <Grid ColumnDefinitions="*,Auto"
+                                      RowDefinitions="Auto,Auto,Auto">
+                                    <Label Text="{Binding CourseId, StringFormat='รหัสวิชา: {0}'}"
+                                           FontSize="16"
+                                           Grid.Column="0"
+                                           Grid.Row="0"
+                                           TextColor="#8B4513"/>
+
+                                    <Label Text="{Binding Action, StringFormat='การดำเนินการ: {0}'}"
+                                           FontSize="18"
+                                           Grid.Column="0"
+                                           Grid.Row="1"
+                                           TextColor="#D2691E"/>
+
+                                    <Label Text="{Binding Timestamp, StringFormat='วันเวลา: {0:dd/MM/yyyy HH:mm}'}"
+                                           FontSize="12"
+                                           Grid.Column="0"
+                                           Grid.Row="2"
+                                           TextColor="#8B4513"/>
+
+                                    <Image Source="{Binding Action, Converter={StaticResource ActionToIconConverter}}"
+                                           WidthRequest="30"
+                                           HeightRequest="30"
+                                           Grid.Column="1"
+                                           Grid.RowSpan="3"
+                                           VerticalOptions="Center"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label Text="ไม่พบประวัติการลงทะเบียน"
+                       IsVisible="{Binding IsEmpty}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="16"
+                       TextColor="#8B4513"
+                       Margin="0,20"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

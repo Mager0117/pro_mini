@@ -1,0 +1,147 @@
+[
+  {
+    "course_id": "CS101",
+    "course_name": "Introduction to Computer Science",
+    "credits": 3
+  },
+  {
+    "course_id": "MATH101",
+    "course_name": "Calculus I",
+    "credits": 4
+  },
+  {
+    "course_id": "PHYS101",
+    "course_name": "Physics I",
+    "credits": 3
+  },
+  {
+    "course_id": "CHEM101",
+    "course_name": "Chemistry I",
+    "credits": 3
+  },
+  {
+    "course_id": "MATH201",
+    "course_name": "Linear Algebra",
+    "credits": 3
+  },
+  {
+    "course_id": "STAT101",
+    "course_name": "Statistics",
+    "credits": 3
+  },
+  {
+    "course_id": "CS102",
+    "course_name": "Data Structures and Algorithms",
+    "credits": 3
+  },
+  {
+    "course_id": "EE201",
+    "course_name": "Electrical Circuits",
+    "credits": 4
+  },
+  {
+    "course_id": "ME201",
+    "course_name": "Mechanics of Materials",
+    "credits": 3
+  },
+  {
+    "course_id": "BIO101",
+    "course_name": "General Biology",
+    "credits": 3
+  },
+  {
+    "course_id": "CE301",
+    "course_name": "Structural Analysis",
+    "credits": 4
+  },
+  {
+    "course_id": "SE201",
+    "course_name": "Software Engineering Principles",
+    "credits": 3
+  },
+  {
+    "course_id": "ENV101",
+    "course_name": "Environmental Science",
+    "credits": 3
+  },
+  {
+    "course_id": "ECON101",
+    "course_name": "Microeconomics",
+    "credits": 3
+  },
+  {
+    "course_id": "PSY101",
+    "course_name": "Introduction to Psychology",
+    "credits": 3
+  },
+  {
+    "course_id": "HIST101",
+    "course_name": "World History",
+    "credits": 3
+  },
+  {
+    "course_id": "ART101",
+    "course_name": "Introduction to Fine Arts",
+    "credits": 3
+  },
+  {
+    "course_id": "CS301",
+    "course_name": "Operating Systems",
+    "credits": 3
+  },
+  {
+    "course_id": "CS302",
+    "course_name": "Computer Networks",
+    "credits": 3
+  },
+  {
+    "course_id": "CS303",
+    "course_name": "Database Management Systems",
+    "credits": 3
+  },
+  {
+    "course_id": "CS304",
+    "course_name": "Artificial Intelligence",
+    "credits": 3
+  },
+  {
+    "course_id": "CS305",
+    "course_name": "Cybersecurity Fundamentals",
+    "credits": 3
+  },
+  {
+    "course_id": "BUS101",
+    "course_name": "Principles of Business",
+    "credits": 3
+  },
+  {
+    "course_id": "LAW101",
+    "course_name": "Introduction to Law",
+    "credits": 3
+  },
+  {
+    "course_id": "PHIL101",
+    "course_name": "Philosophy and Ethics",
+    "credits": 3
+  },
+  {
+    "course_id": "ENG101",
+    "course_name": "English Composition",
+    "credits": 3
+  },
+  {
+    "course_id": "MUS101",
+    "course_name": "Introduction to Music",
+    "credits": 3
+  },
+  {
+    "course_id": "MED101",
+    "course_name": "Medical Terminology",
+    "credits": 3
+  },
+  {
+    "course_id": "SPORT101",
+    "course_name": "Physical Education",
+    "credits": 2
+  }
+]

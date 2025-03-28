@@ -1,0 +1,79 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Page.LoginPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:viewmodel="clr-namespace:MauiApp1.ViewsModel"
+             x:DataType="viewmodel:LoginViewsModel"
+             Title="LoginPage">
+
+       <Grid BackgroundColor="#FF6F61">
+              <Image Source="background_pattern.png"
+                     Aspect="AspectFill"
+                     Opacity="0.2"/>
+
+              <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                     <Image Source="cartoon_character.png" WidthRequest="120" Margin="0,20"/>
+
+                     <Border WidthRequest="320"
+                             HeightRequest="420"
+                             BackgroundColor="#FFD166"
+                             StrokeShape="RoundRectangle 40"
+                             Padding="25">
+                            <VerticalStackLayout>
+                                   <Image Source="icons8_person_96.png"
+                                          WidthRequest="60"
+                                          Margin="0,10"/>
+
+                                   <Label Text="Reg MSU"
+                                          TextColor="#D62828"
+                                          FontSize="24"
+                                          FontAttributes="Bold"
+                                          HorizontalOptions="Center"
+                                          Margin="0, 10"/>
+
+                                   <Border StrokeShape="RoundRectangle 20"
+                                           Margin="0, 10"
+                                           BackgroundColor="White">
+                                          <Entry HorizontalTextAlignment="Center"
+                                                 TextColor="Black"
+                                                 Text="{Binding Email}"
+                                                 Placeholder="Email Address"
+                                                 PlaceholderColor="Gray"/>
+                                   </Border>
+
+                                   <Border StrokeShape="RoundRectangle 20"
+                                           BackgroundColor="White">
+                                          <Entry HorizontalTextAlignment="Center"
+                                                 IsPassword="True"
+                                                 TextColor="Black"
+                                                 Text="{Binding Password}"
+                                                 Placeholder="Password"
+                                                 PlaceholderColor="Gray"/>
+                                   </Border>
+
+                                   <Button Text="Sign In"
+                                           WidthRequest="250"
+                                           Margin="0, 10"
+                                           TextColor="White"
+                                           HeightRequest="50"
+                                           Command="{Binding LoginCommand}"
+                                           BackgroundColor="#EF233C"
+                                           CornerRadius="25"
+                                           FontAttributes="Bold"/>
+
+                                   <FlexLayout Direction="Row" JustifyContent="Center">
+                                          <Label Text="New here? " TextColor="Black"/>
+                                          <Label Text="Register"
+                                                 TextColor="Blue"
+                                                 FontAttributes="Bold">
+                                                 <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding GotoPageCommand}"
+                                                                              CommandParameter="register"/>
+                                                 </Label.GestureRecognizers>
+                                          </Label>
+                                   </FlexLayout>
+                            </VerticalStackLayout>
+                     </Border>
+              </VerticalStackLayout>
+       </Grid>
+</ContentPage>
