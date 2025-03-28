@@ -6,6 +6,7 @@
              x:DataType="viewmodel:ShowObjectsViewModel"
              Title="ข้อมูลนักศึกษา"
              BackgroundColor="#FFF8E1">
+
     <Grid RowDefinitions="*" ColumnDefinitions="*, Auto">
         <ScrollView Grid.Row="0" Grid.Column="0">
             <VerticalStackLayout Padding="20" Spacing="15">
@@ -79,12 +80,11 @@
 
     <ContentPage.Resources>
         <Style x:Key="CardFrameStyle" TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="#FFF3E0" />
-            <Setter Property="CornerRadius" Value="10" />
-            <Setter Property="Padding" Value="15" />
-            <Setter Property="Margin" Value="0, 0, 0, 10" />
-            <Setter Property="BorderColor" Value="#D2691E" />
-        </Style>
+        <Setter Property="BackgroundColor" Value="#E6D7B7" /> <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Padding" Value="15" />
+        <Setter Property="Margin" Value="0, 0, 0, 10" />
+        <Setter Property="BorderColor" Value="#D2691E" />
+    </Style>
 
         <Style x:Key="CourseCardFrameStyle" TargetType="Frame" BasedOn="{StaticResource CardFrameStyle}">
             <Setter Property="Padding" Value="15" />

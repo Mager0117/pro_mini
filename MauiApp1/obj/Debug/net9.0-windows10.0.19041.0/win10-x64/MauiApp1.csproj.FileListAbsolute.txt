@@ -1856,3 +1856,4 @@ C:\Users\65011\Downloads\minipro\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\w
 C:\Users\65011\Downloads\minipro\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\65011\Downloads\minipro\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\65011\Downloads\minipro\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\65011\Downloads\minipro\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.sourcelink.json
